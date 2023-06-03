@@ -16,8 +16,17 @@ services:
         source: nginx.default.conf
         target: /etc/nginx/conf.d/default.conf
         read_only: true
+      - type: bind
+        source: app.crt
+        target: /etc/ssl/app.crt
+        read_only: true
+      - type: bind
+        source: app.key
+        target: /etc/ssl/app.key
+        read_only: true
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - app-1
       - app-2
