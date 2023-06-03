@@ -2,7 +2,7 @@
 
 2 instances with "Hello world" nodejs app in docker and simple Nginx load balancer
 
-Nodejs app listens 0.0.0.0
+Nodejs app listens 0.0.0.0:3000
 
 all containers starts with docker-compose:
 
