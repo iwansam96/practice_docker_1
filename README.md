@@ -2,6 +2,8 @@
 
 2 instances with "Hello world" nodejs app in docker with Nginx Unit as app server and simple Nginx load balancer
 
+Nodejs app listens 127.0.0.1:3000
+
 all containers starts with docker-compose:
 
 ```
