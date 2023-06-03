@@ -1,4 +1,6 @@
-FROM node:current-alpine3.16
+FROM unit:1.30.0-node18
 COPY ./app/*.js /foo/
-EXPOSE 3000
-ENTRYPOINT [ "node", "/foo/server.js" ]
+RUN /bin/bash -c "cd /foo && chmod +x server.js; \
+    chown -R unit:unit server.js; \
+    npm link unit-http;"
+EXPOSE 80

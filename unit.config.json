@@ -1,0 +1,22 @@
+{
+    "listeners": {
+        "*:80": {
+            "pass": "applications/node_app"
+        }
+    },
+    "applications": {
+        "node_app": {
+            "type": "external",
+            "working_directory": "/foo/",
+            "executable": "/usr/bin/env",
+            "arguments": [
+                "node",
+                "--loader",
+                "unit-http/loader.mjs",
+                "--require",
+                "unit-http/loader",
+                "server.js"
+            ]
+        }
+    }
+}
