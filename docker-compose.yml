@@ -1,8 +1,13 @@
 services:
-  app:
+  app-1:
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3000"
+  
+  app-2:
+    build: .
+    ports:
+      - "3002:3000"
 
   nginx:
     image: nginx:alpine-slim
@@ -14,4 +19,5 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - app
+      - app-1
+      - app-2
